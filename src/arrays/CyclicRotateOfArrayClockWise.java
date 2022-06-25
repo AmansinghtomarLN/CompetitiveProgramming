@@ -9,12 +9,12 @@ public class CyclicRotateOfArrayClockWise {
 
 		// cyclic rotation / shifting of position clock-wise by n position
 		// second argument is number of position clockwise
-		int result[] = rotateArrayByclockWiseByUnit(a, 4);
+	//	int result[] = rotateArrayByclockWiseByUnit(a, 4);
 //		int result[] = 	rotateArrayByAnticlockWiseByUnit(a,1);
-		display(result);
+	//	display(result);
 
 		// cyclic rotation / shifting by one postion clock-wise using 2 temp variable
-		// rotate1(b,b.length);
+		 rotate1(b,b.length);
 
 	}
 
