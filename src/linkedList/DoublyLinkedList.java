@@ -4,6 +4,23 @@ public class DoublyLinkedList {
 
 	Node head;
 
+	private class Node {
+
+		int data;
+		Node next;
+		Node pre;
+
+		public Node(int data) {
+			this.data = data;
+		}
+
+		public Node(int data, Node next, Node pre) {
+			this.data = data;
+			this.next = next;
+			this.pre = pre;
+		}
+	}
+	
 	public static void main(String[] args) {
 
 		DoublyLinkedList ll = new DoublyLinkedList();
@@ -26,7 +43,7 @@ public class DoublyLinkedList {
 	public void insertFirst(int element) {
 
 		Node newNode = new Node(element);
-		newNode.next = head;
+		newNode.next = head; // if list is having more than 1 node -> it will point to second node
 		newNode.pre = null;
 
 		if (head != null) {
@@ -77,22 +94,6 @@ public class DoublyLinkedList {
 
 	}
 
-	private class Node {
 
-		int data;
-		Node next;
-		Node pre;
-
-		public Node(int data) {
-			this.data = data;
-		}
-
-		public Node(int data, Node next, Node pre) {
-			this.data = data;
-			this.next = next;
-			this.pre = pre;
-		}
-
-	}
 
 }

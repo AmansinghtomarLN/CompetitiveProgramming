@@ -5,11 +5,8 @@ import java.util.ArrayList;
 public class SubSequence {
 /*
 	No. of  subsequence = No.of choice ^ no. of characters
-	
 	abc = 2^3
 	choice = yes or not ?? include or not include
-
-	
 	*/
 	
 	public static void main(String[] args) {

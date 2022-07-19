@@ -1,5 +1,13 @@
 package linkedList;
 
+
+/*
+head==null
+head.next==null // delete first  -> list can have only one node
+
+ */
+
+
 public class LinkedList {
 	static Node head;
 
@@ -62,8 +70,8 @@ public class LinkedList {
 				return;
 			}
 
-			Node secondLast = head;
-			Node lastNode = head.next;
+			Node secondLast = head; // first pointer to track second last node
+			Node lastNode = head.next; // second pointer to track last node
 			while (lastNode.next != null) { // for reaching to last node of the list
 				lastNode = lastNode.next;
 				secondLast = secondLast.next;	

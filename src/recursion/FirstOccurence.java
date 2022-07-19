@@ -8,7 +8,7 @@ public class FirstOccurence {
 	public static void main(String[] args) {
 		
 		int[] arr = new int[] {2,3,4,5,3,6,8,2};
-		int data = 12;
+		int data = 2;
 		System.out.println("first occurence of "+ data+ " is : "+firstOccurence(arr, 0, data));
 		
 	}
