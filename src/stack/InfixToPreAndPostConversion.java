@@ -6,7 +6,8 @@ public class InfixToPreAndPostConversion {
 
 	public static void main(String[] args) {
 
-		
+		String exp= "a*b+c";
+		conversion(exp);
 		
 	}
 
@@ -60,7 +61,7 @@ public class InfixToPreAndPostConversion {
 		// For Postfix evaluation
 		String v4 = postfix.pop();
 		String v3 = postfix.pop();
-		String postExpression = v3+v3+operte;
+		String postExpression = v3+v4+operte;
 		postfix.push(postExpression);
 	}
 
