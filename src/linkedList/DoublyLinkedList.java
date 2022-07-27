@@ -24,6 +24,8 @@ public class DoublyLinkedList {
 	public static void main(String[] args) {
 
 		DoublyLinkedList ll = new DoublyLinkedList();
+
+		ll.insertFirst(99);
 		ll.insertLast(100);
 		ll.insertFirst(10);
 		ll.insertFirst(20);
@@ -48,6 +50,7 @@ public class DoublyLinkedList {
 
 		if (head != null) {
 			head.pre = newNode;
+			
 		}
 		head = newNode;
 	}
