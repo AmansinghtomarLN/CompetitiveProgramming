@@ -6,27 +6,30 @@ public class Company {
 
 	boolean chance = false;
 
-	synchronized void produce_item(int n) {
+	// false = producer chance
+	// true =  consumer chance
+	
+	synchronized void produce_item(int n) throws InterruptedException {
 
-		if (chance) {
-			try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+		if(chance) {
+			wait();
 		}
-
+		
 		this.n = n;
 		System.out.println("Produced :" + n);
 		chance = true;
 		notify();
 	}
 
-	synchronized public int consume_item() {
+	synchronized public void consume_item() throws InterruptedException {
 
-		if (!chance) {
-			try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+		if(!chance) {
+			wait();
 		}
-
+		
 		System.out.println("Consumed :" + this.n);
-		chance=false;
+		chance= false;
 		notify();
-		return this.n;
+//		return this.n;
 	}
 }

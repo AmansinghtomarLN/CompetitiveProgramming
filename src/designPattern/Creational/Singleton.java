@@ -47,7 +47,7 @@ public class Singleton {
 
 class SingletonEager {
 
-	// since all are static content that's why they are getting instanciated at
+	// since all are static content that's why they are getting instantiated at
 	// compile time
 
 	private static SingletonEager obj = new SingletonEager(); // 1:- defining private static variable & at the same time

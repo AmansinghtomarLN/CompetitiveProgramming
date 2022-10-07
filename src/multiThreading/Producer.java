@@ -7,10 +7,15 @@ public class Producer extends Thread{
 	@Override
 	public void run() {
 		int i =1;
-		while(true) {
-				c.produce_item(i);
-			try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
-			i++;
+		while(i<=5) {
+				try {
+					c.produce_item(i);
+					i++;
+			//		Thread.sleep(500);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		}
 	
 	}

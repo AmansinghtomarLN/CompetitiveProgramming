@@ -14,11 +14,7 @@ public class DoublyLinkedList {
 			this.data = data;
 		}
 
-		public Node(int data, Node next, Node pre) {
-			this.data = data;
-			this.next = next;
-			this.pre = pre;
-		}
+		
 	}
 	
 	public static void main(String[] args) {
@@ -91,10 +87,6 @@ public class DoublyLinkedList {
 			tail = tail.pre;
 		}
 		System.out.println();
-	}
-
-	public void displayReverse() {
-
 	}
 
 

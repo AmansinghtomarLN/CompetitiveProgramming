@@ -8,10 +8,17 @@ public class SubSequence {
 
 	public static void main(String[] args) {
 
-		String sub = "abc";
+		String sub = "abcd";
 		ArrayList<String> subSequence = subSequence(sub);
 		System.out.println(subSequence);
 
+		for(String s : subSequence) {
+			if(SubString.isPalindrome(s) && s.length()>=1) {
+				System.out.print(s+", ");
+			}
+		}
+			
+		System.out.println();
 		System.out.println(ispar("{(([])}"));
 	}
 
@@ -66,6 +73,7 @@ public class SubSequence {
 		ArrayList<String> result = new ArrayList<>();
 		
 		for(String ss: sub) {
+			
 			result.add(""+ss);
 			result.add(c+ss);
 		}
