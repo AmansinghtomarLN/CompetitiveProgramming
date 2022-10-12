@@ -4,6 +4,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import javax.management.remote.SubjectDelegationPermission;
+
 public class SubSequence {
 
 	public static void main(String[] args) {
@@ -19,13 +21,14 @@ public class SubSequence {
 		}
 			
 		System.out.println();
-		System.out.println(ispar("{(([])}"));
+		System.out.println(isBalanceBrackers("{(([])}"));
+		
+		
 	}
 
 	
 	
-	
-	 static boolean ispar(String s)
+	 static boolean isBalanceBrackers(String s)
 	    {
 	        boolean result  = true;
 	        // add your code here

@@ -8,7 +8,7 @@ public class SubString {
 
 	public static void main(String[] args) {
 		String str = "abccbc";
-	//	subString(str);
+		subString(str);
 	ArrayList<String> palindromeString = 	palindromicSubString(str);
 	//Collections.sort(palindromeString);
 	
