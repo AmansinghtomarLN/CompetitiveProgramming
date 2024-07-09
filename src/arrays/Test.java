@@ -5,16 +5,23 @@ import java.util.Collections;
 public class Test {
 
 	
+	
 	public static void main(String[] args) {
-		int[] arr = new int[]{4,0,4,3,3};
-		int k =5;
-		System.out.println(findMaxAverage(arr, k));
-		System.out.println("Aman");
+	
 		
-	}
+	
+		}
 	
 
-		   public static double findMaxAverage(int[] nums, int k) {
+		   public static double findMaxAverage(int[] nums, int k) throws ArithmeticException{
+			   
+					if(k >10) {
+						throw new ArithmeticException();
+						// You provide full free resources										
+					}
+				
+				
+				
 		       double sum=0;
 		        for(int i=0;i<k;i++)
 		            sum+=nums[i];
@@ -28,6 +35,8 @@ public class Test {
 	    }
 	
 	public static  boolean containsNearbyDuplicate(int[] nums, int k) {
+		findMaxAverage(nums, k);
+		
         int i =0;
         int j =0;
         int tempI = 0;
