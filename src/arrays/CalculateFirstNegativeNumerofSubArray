@@ -1,0 +1,37 @@
+public static void calculateFirstNegativeNumber(int[] arr5, int subArray) {
+
+        int start = 0;
+        int end = 0;
+        int first = 0;
+        Queue que   = new LinkedList();
+
+        while(end<arr5.length){
+            if(end-start+1 < subArray){
+                if(arr5[end]<0){
+                    que.add(arr5[end]);
+                }
+                end++;
+            }else if(end-start+1 == subArray){
+                if(arr5[end]<0){
+                    que.add(arr5[end]);
+                }
+                int temp = start;
+                int found = 0;
+                while(temp<=end){
+
+                    if(arr5[temp]<0){
+                        if(arr5[temp]== arr5[start]){System.out.println(que.poll());found = 1;break;}
+                        System.out.println(que.element());
+                        found = 1;
+                        break;
+                    }
+                    found = 0;
+                    temp++;
+                }
+                if(found == 0){System.out.println("0");}
+                start++;
+                end++;
+            }
+        }
+
+    }
