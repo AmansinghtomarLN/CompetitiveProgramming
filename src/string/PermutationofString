@@ -1,0 +1,44 @@
+    public static ArrayList<String> permutationOfString1InList(String str, String curent, ArrayList<String> list){
+
+        if(str.length()==0){
+            list.add(curent);
+        }
+
+        for(int  i = 0; i<str.length(); i++){
+            char c = str.charAt(i);
+            String remString = str.substring(0,i)+str.substring(i+1);
+
+            permutationOfString1InList(remString, curent+c, list);
+        }
+    return list;
+    }
+
+    public static  void permutationOfString1(String str, String result){
+
+        if(str.length()==0){
+            System.out.println(result + "");
+            return;
+        }
+
+        for(int  i = 0; i<str.length(); i++){
+            char c = str.charAt(i);
+            String remString = str.substring(0,i)+str.substring(i+1);
+
+            permutationOfString1(remString, result+c);
+        }
+
+    }
+
+    public static void permutationOfString(String str, int index){
+
+        if(index == str.length()){
+            System.out.println(str);
+            return;
+        }
+        for(int i = index; i<str.length(); i++){
+            str = swap(str, index, i);
+            permutationOfString(str, index+1);
+            str = swap(str, index, i);
+        }
+
+    }
