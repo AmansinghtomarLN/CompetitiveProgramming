@@ -1,0 +1,39 @@
+  public static void largetSubArrayOfSumK(){
+        int[] arr = new int[]{4, 1, 1, 1, 2, 3, 5};
+       // int[] arr = new int[]{5, 4, 2, 1, 1, 1, 3};
+
+
+        int k = 5;
+        int start = 0;
+        int end = 0;
+
+        int result_start = 0;
+        int result_end = 0;
+
+        int sum = 0;
+
+        while(end<arr.length){
+            sum = sum + arr[end];
+            if(sum < k){
+                end++;
+            }else if (sum == k){
+                if((end-start) > (result_end-result_start)){
+                    result_start = start;
+                    result_end = end;
+                }
+
+                sum = sum-arr[start];
+                start++;
+                end++;
+            }else {
+                sum = sum-arr[start];
+                start++;
+                end++;
+            }
+        }
+
+        for(int i = result_start; i<=result_end; i++){
+            System.out.print(arr[i] + " ");
+        }
+
+    }
