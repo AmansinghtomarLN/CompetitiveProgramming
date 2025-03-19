@@ -1,0 +1,60 @@
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class AnagramGenerator {
+
+    public static void main(String[] args) {
+        String input = "ABC";
+        System.out.println("All anagrams of the string are:");
+        printAnagrams(input);
+    }
+
+    // Function to print all anagrams of a given string
+    public static void printAnagrams(String str) {
+        // Convert the string to a character array
+        char[] charArray = str.toCharArray();
+
+        // Create a set to store unique anagrams (avoiding duplicates)
+        Set<String> resultSet = new HashSet<>();
+
+        // Call the helper function to generate anagrams
+        generateAnagrams(charArray, 0, resultSet);
+
+        // Print all the unique anagrams stored in resultSet
+        for (String anagram : resultSet) {
+            System.out.println(anagram);
+        }
+    }
+
+    // Helper function to generate all anagrams using backtracking
+    private static void generateAnagrams(char[] str, int index, Set<String> resultSet) {
+        // If we reach the end of the string, we've formed a valid anagram
+        if (index == str.length) {
+            // Convert the character array to a string and add it to the result set
+            resultSet.add(new String(str));
+            return;
+        }
+
+        // Swap the current index with each subsequent index
+        for (int i = index; i < str.length; i++) {
+            // Swap the characters at the current index and the i-th index
+            swap(str, index, i);
+
+            // Recursively generate the remaining anagrams
+            generateAnagrams(str, index + 1, resultSet);
+
+            // Backtrack: undo the swap
+            swap(str, index, i);
+        }
+    }
+
+    // Helper function to swap two characters in the array
+    private static void swap(char[] str, int i, int j) {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+
+
+}
