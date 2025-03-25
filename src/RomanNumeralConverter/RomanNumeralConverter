@@ -1,0 +1,73 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class RomanNumeralConverter {
+    public static void main(String[] args) {
+        String input = "LLXXXXVVVV";
+        System.out.println(transformInput(input));
+    }
+
+    public static String transformInput(String input) {
+
+        Map<Character,Integer> romanToInt = new HashMap<Character,Integer>();
+        romanToInt.put('I', 1);
+        romanToInt.put('V', 5);
+        romanToInt.put('X', 10);
+        romanToInt.put('L', 50);
+        romanToInt.put('C', 100);
+        romanToInt.put('D', 500);
+        romanToInt.put('M', 1000);
+
+        int sum = 0;
+
+        //convert roman numeral string to an integer value
+        for(int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            if(romanToInt.containsKey(ch)) {
+                sum += romanToInt.get(ch);
+            }
+        }
+
+        String roman = "";
+
+        while(sum >= 1000) {
+            roman += "M";
+            sum -= 1000;
+        }
+
+        if(sum >= 500) {
+            roman += "D";
+            sum -= 500;
+        }
+
+        while(sum >= 100) {
+            roman += "C";
+            sum -= 100;
+        }
+
+        if(sum >= 50) {
+            roman += "L";
+            sum -= 50;
+        }
+
+        while(sum >= 10) {
+            roman += "X";
+            sum -= 10;
+        }
+
+        if(sum >= 5) {
+            roman += "V";
+            sum -= 5;
+        }
+
+        while(sum >= 1) {
+            roman += "I";
+            sum -= 1;
+        }
+
+
+
+        return roman;
+    }
+
+}
