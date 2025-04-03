@@ -66,6 +66,46 @@ public class RomanNumeralConverter {
         }
 
 
+ public static String transformInputOpyimize(String input) {
+
+   Map<Character, Integer> romanToInt = new HashMap<>();
+   romanToInt.put('I', 1);
+   romanToInt.put('V', 5);
+   romanToInt.put('X', 10);
+   romanToInt.put('L', 50);
+   romanToInt.put('C', 100);
+   romanToInt.put('D', 500);
+   romanToInt.put('M', 1000);
+
+   int sum = 0;
+
+   // Convert the roman numeral string to an integer value
+   for (int i = 0; i < input.length(); i++) {
+       sum += romanToInt.get(input.charAt(i));
+   }
+
+   int sum1 = input.chars()  // Create an IntStream of character codes
+           .map(ch -> romanToInt.get((char) ch))  // Map each char to its integer value
+           .sum();  // Sum the values
+
+
+   // Roman numeral symbols and their corresponding values
+   String[] romanSymbols = {"M", "D", "C", "L", "X", "V", "I"};
+   int[] values = {1000, 500, 100, 50, 10, 5, 1};
+
+   StringBuilder roman = new StringBuilder();
+
+   // Build the Roman numeral string
+   for (int i = 0; i < values.length; i++) {
+       while (sum >= values[i]) {
+           roman.append(romanSymbols[i]);
+           sum -= values[i];
+       }
+   }
+   return roman.toString();
+}
+
+
 
         return roman;
     }
